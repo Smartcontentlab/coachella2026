@@ -4,7 +4,6 @@
 import { useState } from 'react';
 import { Play, Users, Clock } from 'lucide-react';
 import type { Artist } from '@/lib/data';
-import { stageColors, dayColors } from '@/lib/data';
 import VideoModal from './VideoModal';
 
 interface ArtistCardProps {
@@ -17,8 +16,17 @@ export default function ArtistCard({ artist, mode }: ArtistCardProps) {
 
   const videos = mode === 'w1' ? (artist.w1Videos || []) : (artist.w2PreviewVideos || []);
   const hasVideos = videos.length > 0;
-  const stageClass = stageColors[artist.stage] || 'stage-main';
-  const dayColor = dayColors[artist.day];
+  const stageColorMap: Record<string, { bg: string; text: string }> = {
+    'Coachella Stage': { bg: 'bg-amber-500/20', text: 'text-amber-300' },
+    'Outdoor Theatre': { bg: 'bg-emerald-500/20', text: 'text-emerald-300' },
+    'Sahara':          { bg: 'bg-rose-500/20',    text: 'text-rose-300' },
+    'Mojave':          { bg: 'bg-violet-500/20',  text: 'text-violet-300' },
+    'Gobi':            { bg: 'bg-orange-500/20',  text: 'text-orange-300' },
+    'Sonora':          { bg: 'bg-teal-500/20',    text: 'text-teal-300' },
+    'Yuma':            { bg: 'bg-blue-500/20',    text: 'text-blue-300' },
+    'Quasar':          { bg: 'bg-purple-500/20',  text: 'text-purple-300' },
+  };
+  const sc = stageColorMap[artist.stage] || { bg: 'bg-white/10', text: 'text-white/60' };
 
   const thumbnailId = videos[0]?.videoId;
 
@@ -104,8 +112,8 @@ export default function ArtistCard({ artist, mode }: ArtistCardProps) {
 
           {/* Stage + Genre badges */}
           <div className="flex flex-wrap gap-1 mb-2">
-            <span className={`${stageClass} text-xs px-2 py-0.5 rounded-full font-medium`}>
-              {artist.stage}
+            <span className={`${sc.bg} ${sc.text} text-xs px-2 py-0.5 rounded-full font-medium`}>
+              {artist.stage === 'Coachella Stage' ? 'Main Stage' : artist.stage}
             </span>
             {artist.genre && (
               <span className="text-xs px-2 py-0.5 rounded-full bg-white/8 text-white/50 border border-white/10">
