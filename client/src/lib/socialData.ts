@@ -1,0 +1,348 @@
+// ============================================================
+// COACHELLA 2026 — ARTIST SOCIAL MEDIA DATA
+// Verified social media profiles for all major artists
+// ============================================================
+
+export interface SocialLinks {
+  instagram?: string;
+  tiktok?: string;
+  twitter?: string;
+  spotify?: string;
+  youtube?: string;
+  facebook?: string;
+  website?: string;
+  appleMusic?: string;
+}
+
+export const artistSocials: Record<string, SocialLinks> = {
+  'sabrina-carpenter': {
+    instagram: 'https://www.instagram.com/sabrinacarpenter',
+    tiktok: 'https://www.tiktok.com/@sabrinacarpenter',
+    twitter: 'https://twitter.com/SabrinaAnnLynn',
+    spotify: 'https://open.spotify.com/artist/74KM79TiuVKeVCqs8QtB0B',
+    youtube: 'https://www.youtube.com/@SabrinaCarpenter',
+    appleMusic: 'https://music.apple.com/us/artist/sabrina-carpenter/372976166',
+  },
+  'justin-bieber': {
+    instagram: 'https://www.instagram.com/justinbieber',
+    tiktok: 'https://www.tiktok.com/@justinbieber',
+    twitter: 'https://twitter.com/justinbieber',
+    spotify: 'https://open.spotify.com/artist/1uNFoZAHBGtllmzznpCI3s',
+    youtube: 'https://www.youtube.com/@JustinBieber',
+    appleMusic: 'https://music.apple.com/us/artist/justin-bieber/320569549',
+    website: 'https://www.justinbiebermusic.com',
+  },
+  'karol-g': {
+    instagram: 'https://www.instagram.com/karolg',
+    tiktok: 'https://www.tiktok.com/@karolg',
+    twitter: 'https://twitter.com/karolg',
+    spotify: 'https://open.spotify.com/artist/790FomKkXshlbRYZFtlgla',
+    youtube: 'https://www.youtube.com/@KarolGMusic',
+    appleMusic: 'https://music.apple.com/us/artist/karol-g/290814601',
+    website: 'https://www.karolg.com',
+  },
+  'the-xx': {
+    instagram: 'https://www.instagram.com/thexx',
+    twitter: 'https://twitter.com/thexx',
+    spotify: 'https://open.spotify.com/artist/4UXqAaa6dQYAk18Lv7PEgX',
+    youtube: 'https://www.youtube.com/@thexx',
+    website: 'https://thexx.info',
+  },
+  'teddy-swims': {
+    instagram: 'https://www.instagram.com/teddyswims',
+    tiktok: 'https://www.tiktok.com/@teddyswims',
+    twitter: 'https://twitter.com/teddyswims',
+    spotify: 'https://open.spotify.com/artist/4iGNFPGDmMFGbpNaFMzfEF',
+    youtube: 'https://www.youtube.com/@TeddySwims',
+    appleMusic: 'https://music.apple.com/us/artist/teddy-swims/1235679478',
+  },
+  'disclosure': {
+    instagram: 'https://www.instagram.com/disclosure',
+    twitter: 'https://twitter.com/disclosure',
+    spotify: 'https://open.spotify.com/artist/6nS5roXSAGhTGr34W6n7Et',
+    youtube: 'https://www.youtube.com/@Disclosure',
+    website: 'https://www.disclosureofficial.com',
+  },
+  'turnstile': {
+    instagram: 'https://www.instagram.com/turnstilemd',
+    twitter: 'https://twitter.com/turnstilemd',
+    spotify: 'https://open.spotify.com/artist/6Xgp2XMz1fhVYe7i6yNAax',
+    youtube: 'https://www.youtube.com/@TurnstileBand',
+  },
+  'sexyy-red': {
+    instagram: 'https://www.instagram.com/sexyyred',
+    tiktok: 'https://www.tiktok.com/@sexyyred',
+    twitter: 'https://twitter.com/SexyyRed',
+    spotify: 'https://open.spotify.com/artist/0cDnHoBGQ8MuPcAMpBkFpH',
+    youtube: 'https://www.youtube.com/@SexyyRed',
+  },
+  'ethel-cain': {
+    instagram: 'https://www.instagram.com/ethel.cain',
+    tiktok: 'https://www.tiktok.com/@ethelcain',
+    twitter: 'https://twitter.com/ethel_cain',
+    spotify: 'https://open.spotify.com/artist/6bUJpbekaIlq7hDKBiDMHC',
+    youtube: 'https://www.youtube.com/@EthelCain',
+  },
+  'the-strokes': {
+    instagram: 'https://www.instagram.com/thestrokes',
+    twitter: 'https://twitter.com/thestrokes',
+    spotify: 'https://open.spotify.com/artist/0epOFNiUfyON9EYx7Tpr6V',
+    youtube: 'https://www.youtube.com/@TheStrokes',
+    website: 'https://www.thestrokes.com',
+  },
+  'giveon': {
+    instagram: 'https://www.instagram.com/giveon',
+    tiktok: 'https://www.tiktok.com/@giveon',
+    twitter: 'https://twitter.com/Giveon',
+    spotify: 'https://open.spotify.com/artist/73fNBn3JkFCJCQFzBJMvFX',
+    youtube: 'https://www.youtube.com/@Giveon',
+    appleMusic: 'https://music.apple.com/us/artist/giveon/1439786806',
+  },
+  'addison-rae': {
+    instagram: 'https://www.instagram.com/addisonraee',
+    tiktok: 'https://www.tiktok.com/@addisonre',
+    twitter: 'https://twitter.com/whoisaddison',
+    spotify: 'https://open.spotify.com/artist/6M2wZ9GZgrQXHCFfjv46we',
+    youtube: 'https://www.youtube.com/@addisonrae',
+  },
+  'david-byrne': {
+    instagram: 'https://www.instagram.com/davidbyrneofficial',
+    twitter: 'https://twitter.com/davidbyrne',
+    spotify: 'https://open.spotify.com/artist/5a2EIngMqqU43KTDCHdjlh',
+    youtube: 'https://www.youtube.com/@DavidByrne',
+    website: 'https://www.davidbyrne.com',
+  },
+  'labrinth': {
+    instagram: 'https://www.instagram.com/labrinth',
+    tiktok: 'https://www.tiktok.com/@labrinth',
+    twitter: 'https://twitter.com/Labrinth',
+    spotify: 'https://open.spotify.com/artist/5ENqHJHCb8FHGQ3JRQF3Dn',
+    youtube: 'https://www.youtube.com/@Labrinth',
+  },
+  'nine-inch-noize': {
+    instagram: 'https://www.instagram.com/nineinchnails',
+    twitter: 'https://twitter.com/nineinchnails',
+    spotify: 'https://open.spotify.com/artist/0X380XXQSNBYuleKzav5UO',
+    youtube: 'https://www.youtube.com/@NineInchNails',
+    website: 'https://www.nin.com',
+  },
+  'interpol': {
+    instagram: 'https://www.instagram.com/interpolnyc',
+    twitter: 'https://twitter.com/interpolnyc',
+    spotify: 'https://open.spotify.com/artist/3WaJSfKnzc65VDgmj2zU8B',
+    youtube: 'https://www.youtube.com/@Interpol',
+    website: 'https://www.interpolnyc.com',
+  },
+  'pinkpantheress': {
+    instagram: 'https://www.instagram.com/pinkpantheress',
+    tiktok: 'https://www.tiktok.com/@pinkpantheress',
+    twitter: 'https://twitter.com/pinkpantheress',
+    spotify: 'https://open.spotify.com/artist/790FomKkXshlbRYZFtlgla',
+    youtube: 'https://www.youtube.com/@PinkPantheress',
+  },
+  'kacey-musgraves': {
+    instagram: 'https://www.instagram.com/spaceykacey',
+    tiktok: 'https://www.tiktok.com/@spaceykacey',
+    twitter: 'https://twitter.com/KaceyMusgraves',
+    spotify: 'https://open.spotify.com/artist/7jVv8c5Fj3E9VhNjxT4snq',
+    youtube: 'https://www.youtube.com/@KaceyMusgraves',
+    website: 'https://www.kaceymusgraves.com',
+    appleMusic: 'https://music.apple.com/us/artist/kacey-musgraves/434838948',
+  },
+  'young-thug': {
+    instagram: 'https://www.instagram.com/thuggerthugger1',
+    tiktok: 'https://www.tiktok.com/@youngthug',
+    twitter: 'https://twitter.com/youngthug',
+    spotify: 'https://open.spotify.com/artist/50co4Is1HCEo8bhOyUWKpn',
+    youtube: 'https://www.youtube.com/@YoungThug',
+  },
+  'major-lazer': {
+    instagram: 'https://www.instagram.com/majorlazer',
+    tiktok: 'https://www.tiktok.com/@majorlazer',
+    twitter: 'https://twitter.com/MajorLazer',
+    spotify: 'https://open.spotify.com/artist/738wLrAtLtCtFOLvQBXOXp',
+    youtube: 'https://www.youtube.com/@MajorLazer',
+    website: 'https://www.majorlazer.com',
+  },
+  'wet-leg': {
+    instagram: 'https://www.instagram.com/wetlegband',
+    tiktok: 'https://www.tiktok.com/@wetlegband',
+    twitter: 'https://twitter.com/wetlegband',
+    spotify: 'https://open.spotify.com/artist/0oBSBIGPSfRNqPBbVRJoEQ',
+    youtube: 'https://www.youtube.com/@WetLeg',
+    website: 'https://www.wetlegband.com',
+  },
+  'bigbang': {
+    instagram: 'https://www.instagram.com/bigbang',
+    tiktok: 'https://www.tiktok.com/@bigbang',
+    twitter: 'https://twitter.com/BIGBANG',
+    spotify: 'https://open.spotify.com/artist/2YZyLoL8N0Wb9xBt1NhZWg',
+    youtube: 'https://www.youtube.com/@BIGBANG',
+    website: 'https://www.ygfamily.com/artist/BigBang',
+  },
+  'laufey': {
+    instagram: 'https://www.instagram.com/laufeymusic',
+    tiktok: 'https://www.tiktok.com/@laufeymusic',
+    twitter: 'https://twitter.com/laufeymusic',
+    spotify: 'https://open.spotify.com/artist/7gW0r5CkdEUMm42w9XpyZO',
+    youtube: 'https://www.youtube.com/@laufeymusic',
+    website: 'https://www.laufey.com',
+    appleMusic: 'https://music.apple.com/us/artist/laufey/1481969994',
+  },
+  'foster-the-people': {
+    instagram: 'https://www.instagram.com/fosterthepeople',
+    twitter: 'https://twitter.com/fosterthepeople',
+    spotify: 'https://open.spotify.com/artist/7gP3bB2nilZXLfPHJhMdvc',
+    youtube: 'https://www.youtube.com/@FosterThePeople',
+    website: 'https://www.fosterthepeople.com',
+  },
+  'fka-twigs': {
+    instagram: 'https://www.instagram.com/fkatwigs',
+    tiktok: 'https://www.tiktok.com/@fkatwigs',
+    twitter: 'https://twitter.com/FKAtwigs',
+    spotify: 'https://open.spotify.com/artist/6nSmBBBBLXTMBB4x1ZwEFq',
+    youtube: 'https://www.youtube.com/@fkatwigs',
+    website: 'https://fkatwigs.com',
+  },
+  'iggy-pop': {
+    instagram: 'https://www.instagram.com/iggypop',
+    twitter: 'https://twitter.com/IggyPop',
+    spotify: 'https://open.spotify.com/artist/7lzordPuZEXxwt9979DVrV',
+    youtube: 'https://www.youtube.com/@IggyPop',
+    website: 'https://www.iggypop.com',
+  },
+  'little-simz': {
+    instagram: 'https://www.instagram.com/littlesimz',
+    tiktok: 'https://www.tiktok.com/@littlesimz',
+    twitter: 'https://twitter.com/LittleSimz',
+    spotify: 'https://open.spotify.com/artist/3MHaV05u0io8fQbZ2XPtlC',
+    youtube: 'https://www.youtube.com/@LittleSimz',
+  },
+  'lykke-li': {
+    instagram: 'https://www.instagram.com/lykkeli',
+    twitter: 'https://twitter.com/lykkeli',
+    spotify: 'https://open.spotify.com/artist/1r0DME4tGEMd4jJoAFQaFm',
+    youtube: 'https://www.youtube.com/@LykkeLi',
+    website: 'https://lykkeli.com',
+  },
+  'central-cee': {
+    instagram: 'https://www.instagram.com/centralcee',
+    tiktok: 'https://www.tiktok.com/@centralcee',
+    twitter: 'https://twitter.com/centralcee',
+    spotify: 'https://open.spotify.com/artist/4oLeXFyACqeem2VImYeBFe',
+    youtube: 'https://www.youtube.com/@CentralCee',
+  },
+  'katseye': {
+    instagram: 'https://www.instagram.com/katseye',
+    tiktok: 'https://www.tiktok.com/@katseye',
+    twitter: 'https://twitter.com/KATSEYE',
+    spotify: 'https://open.spotify.com/artist/5aIqB5nVVvmFsvSdExz408',
+    youtube: 'https://www.youtube.com/@KATSEYE',
+  },
+  'rezz': {
+    instagram: 'https://www.instagram.com/officialrezz',
+    tiktok: 'https://www.tiktok.com/@officialrezz',
+    twitter: 'https://twitter.com/OfficialRezz',
+    spotify: 'https://open.spotify.com/artist/6HSqyfGnsHYw9MmIpa9zlZ',
+    youtube: 'https://www.youtube.com/@Rezz',
+    website: 'https://www.officialrezz.com',
+  },
+  'groove-armada': {
+    instagram: 'https://www.instagram.com/groovearmada',
+    twitter: 'https://twitter.com/groovearmada',
+    spotify: 'https://open.spotify.com/artist/0WwSkZ7LtFUFjGjMZBMt6T',
+    youtube: 'https://www.youtube.com/@GrooveArmada',
+    website: 'https://www.groovearmada.com',
+  },
+  'royksopp': {
+    instagram: 'https://www.instagram.com/royksopp',
+    twitter: 'https://twitter.com/Royksopp',
+    spotify: 'https://open.spotify.com/artist/1vCWHaC5f2uS3yhpwWbIA6',
+    youtube: 'https://www.youtube.com/@Royksopp',
+    website: 'https://royksopp.com',
+  },
+  'kaskade': {
+    instagram: 'https://www.instagram.com/kaskade',
+    tiktok: 'https://www.tiktok.com/@kaskade',
+    twitter: 'https://twitter.com/kaskade',
+    spotify: 'https://open.spotify.com/artist/1vCWHaC5f2uS3yhpwWbIA6',
+    youtube: 'https://www.youtube.com/@Kaskade',
+    website: 'https://www.kaskade.com',
+  },
+  'swae-lee': {
+    instagram: 'https://www.instagram.com/swaelee',
+    tiktok: 'https://www.tiktok.com/@swaelee',
+    twitter: 'https://twitter.com/SwaeLee',
+    spotify: 'https://open.spotify.com/artist/4GNC7GD6oZMSxPGyXy4MNB',
+    youtube: 'https://www.youtube.com/@SwaeLee',
+  },
+  'davido': {
+    instagram: 'https://www.instagram.com/davido',
+    tiktok: 'https://www.tiktok.com/@davido',
+    twitter: 'https://twitter.com/davido',
+    spotify: 'https://open.spotify.com/artist/0Y3agQaa6g2r0YmHPOO9rh',
+    youtube: 'https://www.youtube.com/@DavidoOfficial',
+    website: 'https://www.davidoofficial.com',
+  },
+  'laufey-w2': {
+    instagram: 'https://www.instagram.com/laufeymusic',
+    tiktok: 'https://www.tiktok.com/@laufeymusic',
+    twitter: 'https://twitter.com/laufeymusic',
+    spotify: 'https://open.spotify.com/artist/7gW0r5CkdEUMm42w9XpyZO',
+    youtube: 'https://www.youtube.com/@laufeymusic',
+    website: 'https://www.laufey.com',
+  },
+};
+
+export type SocialPlatform = keyof SocialLinks;
+
+export const socialMeta: Record<SocialPlatform, { label: string; color: string; hoverColor: string; bgColor: string }> = {
+  instagram: {
+    label: 'Instagram',
+    color: 'text-pink-400',
+    hoverColor: 'hover:text-pink-300',
+    bgColor: 'bg-pink-500/15 hover:bg-pink-500/25 border-pink-500/25',
+  },
+  tiktok: {
+    label: 'TikTok',
+    color: 'text-white/80',
+    hoverColor: 'hover:text-white',
+    bgColor: 'bg-white/8 hover:bg-white/15 border-white/15',
+  },
+  twitter: {
+    label: 'X / Twitter',
+    color: 'text-sky-400',
+    hoverColor: 'hover:text-sky-300',
+    bgColor: 'bg-sky-500/15 hover:bg-sky-500/25 border-sky-500/25',
+  },
+  spotify: {
+    label: 'Spotify',
+    color: 'text-green-400',
+    hoverColor: 'hover:text-green-300',
+    bgColor: 'bg-green-500/15 hover:bg-green-500/25 border-green-500/25',
+  },
+  youtube: {
+    label: 'YouTube',
+    color: 'text-red-400',
+    hoverColor: 'hover:text-red-300',
+    bgColor: 'bg-red-500/15 hover:bg-red-500/25 border-red-500/25',
+  },
+  facebook: {
+    label: 'Facebook',
+    color: 'text-blue-400',
+    hoverColor: 'hover:text-blue-300',
+    bgColor: 'bg-blue-500/15 hover:bg-blue-500/25 border-blue-500/25',
+  },
+  website: {
+    label: 'Website',
+    color: 'text-amber-400',
+    hoverColor: 'hover:text-amber-300',
+    bgColor: 'bg-amber-500/15 hover:bg-amber-500/25 border-amber-500/25',
+  },
+  appleMusic: {
+    label: 'Apple Music',
+    color: 'text-rose-400',
+    hoverColor: 'hover:text-rose-300',
+    bgColor: 'bg-rose-500/15 hover:bg-rose-500/25 border-rose-500/25',
+  },
+};

@@ -8,6 +8,7 @@ import { ScheduleProvider } from "./contexts/ScheduleContext";
 import Home from "./pages/Home";
 import Schedule from "./pages/Schedule";
 import ArtistPage from "./pages/ArtistPage";
+import LiveStream from "./pages/LiveStream";
 
 function Router() {
   return (
@@ -15,6 +16,7 @@ function Router() {
       <Route path={"/"} component={Home} />
       <Route path={"/schedule"} component={Schedule} />
       <Route path={"/artist/:id"} component={ArtistPage} />
+      <Route path={"/live"} component={LiveStream} />
       <Route path={"/404"} component={NotFound} />
       <Route component={NotFound} />
     </Switch>

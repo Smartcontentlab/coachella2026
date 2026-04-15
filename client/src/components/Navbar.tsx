@@ -2,7 +2,7 @@
 // Enhanced: Search bar, schedule badge, mobile menu
 
 import { useState, useEffect } from 'react';
-import { Menu, X, Calendar } from 'lucide-react';
+import { Menu, X, Calendar, Radio } from 'lucide-react';
 import { useLocation } from 'wouter';
 import { useSchedule } from '@/contexts/ScheduleContext';
 import SearchBar from './SearchBar';
@@ -11,7 +11,6 @@ const navLinks = [
   { label: 'Weekend 1', href: '#weekend1' },
   { label: 'Weekend 2', href: '#weekend2' },
   { label: 'Full Lineup', href: '#lineup' },
-  { label: 'Monetize', href: '#monetize' },
 ];
 
 export default function Navbar() {
@@ -78,6 +77,14 @@ export default function Navbar() {
               {link.label}
             </button>
           ))}
+          {/* Live Stream button */}
+          <button
+            onClick={() => navigate('/live')}
+            className="relative flex items-center gap-1.5 ml-1 px-3 py-2 text-sm font-semibold text-red-300 hover:text-red-200 hover:bg-red-500/10 rounded-lg transition-all duration-200 border border-red-500/25"
+          >
+            <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
+            Live
+          </button>
           {/* Schedule button */}
           <button
             onClick={() => navigate('/schedule')}
@@ -141,6 +148,20 @@ export default function Navbar() {
                 {link.label}
               </button>
             ))}
+            <button
+              onClick={() => { navigate('/live'); setMobileOpen(false); }}
+              className="flex items-center gap-2 px-4 py-3 text-sm text-red-300 hover:bg-red-500/10 rounded-lg transition-colors font-semibold"
+            >
+              <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
+              Live Stream &amp; Watch Party
+            </button>
+            <button
+              onClick={() => { navigate('/schedule'); setMobileOpen(false); }}
+              className="flex items-center gap-2 px-4 py-3 text-sm text-amber-300 hover:bg-amber-500/10 rounded-lg transition-colors font-semibold"
+            >
+              <Calendar size={14} />
+              My W2 Plan
+            </button>
             <a
               href="https://www.coachella.com"
               target="_blank"

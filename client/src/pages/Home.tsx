@@ -3,7 +3,7 @@
 // Enhanced: Search, Newsletter, Artist page links, Schedule CTA, scroll animations
 
 import { useState, useEffect, useRef } from 'react';
-import { Play, Calendar, MapPin, ChevronDown, Star, TrendingUp, DollarSign, Users, Eye, Zap, Globe, ShoppingBag, Mic2, ArrowRight, Clock } from 'lucide-react';
+import { Play, Calendar, MapPin, ChevronDown, Star, ArrowRight, Clock, Music } from 'lucide-react';
 import { useLocation } from 'wouter';
 import Navbar from '@/components/Navbar';
 import ArtistCard from '@/components/ArtistCard';
@@ -39,72 +39,7 @@ const allStageGroups = [
   { label: 'Yuma', artists: yumaArtists },
 ];
 
-const monetizationStrategies = [
-  {
-    icon: <DollarSign size={22} className="text-amber-400" />,
-    title: 'Google AdSense',
-    description: 'Apply for Google AdSense to display contextual ads. Festival and music sites typically earn $3–$8 CPM. With 10,000 monthly visitors, expect $30–$80/month. Scale to 100K visitors for $300–$800/month.',
-    steps: ['Sign up at adsense.google.com', 'Add the AdSense code to your site header', 'Place ad units in high-visibility areas (sidebar, between sections)', 'Optimize ad placement using AdSense experiments'],
-    potential: '$30–$800+/month',
-    color: 'border-amber-500/30',
-  },
-  {
-    icon: <ShoppingBag size={22} className="text-rose-400" />,
-    title: 'Affiliate Marketing',
-    description: 'Earn commissions by linking to festival merchandise, music streaming services, and concert ticket platforms. Coachella merch, Spotify, Apple Music, and StubHub all have affiliate programs.',
-    steps: ['Join Amazon Associates for festival gear/merch links', 'Apply to ShareASale or Impact for music/event affiliates', 'Add "Buy Tickets" buttons linking through your affiliate ID', 'Review festival merchandise and earn 4–8% commission'],
-    potential: '$100–$2,000+/month',
-    color: 'border-rose-500/30',
-  },
-  {
-    icon: <Eye size={22} className="text-emerald-400" />,
-    title: 'Sponsored Content',
-    description: 'Once you build traffic, brands in the music, travel, and lifestyle space will pay for sponsored posts, reviews, and featured artist spotlights. Festival season is peak demand.',
-    steps: ['Build a media kit showing your traffic stats and audience demographics', 'Reach out to music brands, festival gear companies, and travel apps', 'Charge $150–$500 per sponsored post initially', 'Grow to $1,000–$5,000 per post with a larger audience'],
-    potential: '$150–$5,000/post',
-    color: 'border-emerald-500/30',
-  },
-  {
-    icon: <TrendingUp size={22} className="text-blue-400" />,
-    title: 'SEO Traffic Monetization',
-    description: 'Optimize for high-value search terms like "Coachella 2026 performances", "Coachella lineup 2026", and artist-specific queries. Festival content gets massive seasonal traffic spikes.',
-    steps: ['Target long-tail keywords: "[Artist] Coachella 2026 full set"', 'Create individual artist pages for better SEO', 'Build backlinks from music blogs and Reddit communities', 'Submit your sitemap to Google Search Console'],
-    potential: 'Drives all other revenue',
-    color: 'border-blue-500/30',
-  },
-  {
-    icon: <Users size={22} className="text-purple-400" />,
-    title: 'Email Newsletter',
-    description: 'Build an email list of Coachella fans and music lovers. Monetize through sponsored newsletters, affiliate links, and premium content. Email lists are your most valuable owned asset.',
-    steps: ['Add a newsletter signup form (use Mailchimp or ConvertKit free tier)', 'Offer a free "Coachella 2026 Ultimate Guide PDF" as lead magnet', 'Send weekly music discovery emails with affiliate links', 'Sell newsletter sponsorships at $50–$200 per send'],
-    potential: '$200–$3,000/month',
-    color: 'border-purple-500/30',
-  },
-  {
-    icon: <Zap size={22} className="text-yellow-400" />,
-    title: 'Premium Content / Patreon',
-    description: 'Offer exclusive content like extended setlists, behind-the-scenes analysis, and early access to Weekend 2 previews through a Patreon or membership model.',
-    steps: ['Create a Patreon page at $3–$10/month tiers', 'Offer exclusive content: full setlists, artist interviews, festival tips', 'Build a Discord community for premium members', 'Cross-promote on social media to drive signups'],
-    potential: '$500–$5,000+/month',
-    color: 'border-yellow-500/30',
-  },
-  {
-    icon: <Globe size={22} className="text-teal-400" />,
-    title: 'Social Media Monetization',
-    description: 'Repurpose your website content on TikTok, Instagram Reels, and YouTube Shorts. Festival content goes viral easily. Monetize through platform ad revenue and brand deals.',
-    steps: ['Create short clips of performance highlights for TikTok/Reels', 'Apply for YouTube Partner Program (1,000 subscribers + 4,000 watch hours)', 'Use Instagram Creator Marketplace for brand deals', 'Cross-link your website in all social bios'],
-    potential: '$200–$10,000+/month',
-    color: 'border-teal-500/30',
-  },
-  {
-    icon: <Mic2 size={22} className="text-orange-400" />,
-    title: 'Sell the Website',
-    description: 'A well-trafficked music/festival website can be sold for 24–36x monthly revenue on platforms like Flippa or Empire Flippers. Build traffic, monetize it, then sell for a lump sum.',
-    steps: ['List on Flippa.com or Empire Flippers', 'Document all traffic sources, revenue streams, and growth trends', 'A site earning $1,000/month can sell for $24,000–$36,000', 'Grow traffic aggressively before listing to maximize valuation'],
-    potential: '$5,000–$100,000+ (one-time)',
-    color: 'border-orange-500/30',
-  },
-];
+
 
 // Scroll reveal hook
 function useScrollReveal(threshold = 0.15) {
@@ -248,7 +183,7 @@ export default function Home() {
         <div className="container py-5">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
-              { label: 'Artists', value: '100+', icon: <Mic2 size={15} className="text-amber-400" /> },
+              { label: 'Artists', value: '100+', icon: <Music size={15} className="text-amber-400" /> },
               { label: 'Stages', value: '7', icon: <MapPin size={15} className="text-rose-400" /> },
               { label: 'Weekends', value: '2', icon: <Calendar size={15} className="text-emerald-400" /> },
               { label: 'Performance Videos', value: '30+', icon: <Play size={15} className="text-blue-400" /> },
@@ -488,90 +423,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── MONETIZATION GUIDE ── */}
-      <section id="monetize" className="py-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-cover bg-center opacity-10" style={{ backgroundImage: `url(${TEXTURE_IMG})` }} />
-        <div className="absolute inset-0" style={{ background: 'oklch(0.10 0.012 45 / 0.92)' }} />
-        <div className="relative z-10 container">
-          <RevealSection>
-            <div className="mb-12">
-              <div className="flex items-center gap-3 mb-3">
-                <div className="w-1 h-8 bg-yellow-500 rounded-full" />
-                <span className="text-yellow-400 text-sm font-bold tracking-widest uppercase">Make Money</span>
-              </div>
-              <h2 className="text-white mb-3" style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontWeight: 800 }}>
-                How to Monetize<br /><span className="text-amber-gradient">This Website</span>
-              </h2>
-              <p className="text-white/60 text-lg max-w-2xl">
-                A complete playbook for turning festival traffic into real income — from day-one ad revenue to a five-figure exit.
-              </p>
-            </div>
-          </RevealSection>
 
-          <RevealSection delay={100}>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-14">
-              {[
-                { label: 'Month 1 Potential', value: '$50–$200', note: 'Ads + Affiliates', color: 'text-amber-300' },
-                { label: 'Month 3 Potential', value: '$300–$1K', note: 'With SEO growth', color: 'text-rose-300' },
-                { label: 'Month 6 Potential', value: '$1K–$5K', note: 'Sponsored + Email', color: 'text-emerald-300' },
-                { label: 'Exit Value', value: '$25K–$100K+', note: 'Sell on Flippa', color: 'text-yellow-300' },
-              ].map(item => (
-                <div key={item.label} className="rounded-xl border border-white/10 p-4 text-center" style={{ background: 'oklch(0.16 0.018 45)' }}>
-                  <p className={`text-xl font-bold mb-1 ${item.color}`}>{item.value}</p>
-                  <p className="text-white/80 text-xs font-semibold mb-0.5">{item.label}</p>
-                  <p className="text-white/40 text-xs">{item.note}</p>
-                </div>
-              ))}
-            </div>
-          </RevealSection>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {monetizationStrategies.map((strategy, i) => (
-              <RevealSection key={i} delay={i * 60}>
-                <div className={`rounded-xl border p-6 h-full ${strategy.color}`} style={{ background: 'oklch(0.15 0.016 45)' }}>
-                  <div className="flex items-start gap-4 mb-4">
-                    <div className="w-10 h-10 rounded-lg bg-white/8 flex items-center justify-center flex-shrink-0">{strategy.icon}</div>
-                    <div className="flex-1">
-                      <h3 className="text-white font-bold text-base mb-1">{strategy.title}</h3>
-                      <div className="inline-flex items-center gap-1 bg-white/8 rounded-full px-2.5 py-0.5">
-                        <TrendingUp size={10} className="text-green-400" />
-                        <span className="text-green-300 text-xs font-semibold">{strategy.potential}</span>
-                      </div>
-                    </div>
-                  </div>
-                  <p className="text-white/60 text-sm mb-4 leading-relaxed">{strategy.description}</p>
-                  <div className="space-y-2">
-                    {strategy.steps.map((step, j) => (
-                      <div key={j} className="flex items-start gap-2">
-                        <span className="text-amber-500/60 text-xs font-bold mt-0.5 flex-shrink-0">{j + 1}.</span>
-                        <p className="text-white/65 text-sm leading-snug">{step}</p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </RevealSection>
-            ))}
-          </div>
-
-          <RevealSection delay={200}>
-            <div className="mt-10 p-6 rounded-xl border border-amber-500/20 bg-amber-500/8">
-              <div className="flex items-start gap-3">
-                <Zap size={20} className="text-amber-400 mt-0.5 flex-shrink-0" />
-                <div>
-                  <p className="text-amber-300 font-bold mb-2">Pro Strategy: The Festival Content Flywheel</p>
-                  <p className="text-white/65 text-sm leading-relaxed">
-                    The most effective approach is to combine <strong className="text-white/85">SEO + AdSense + Affiliate links</strong> from day one.
-                    Coachella content peaks in April each year, so start building content in January–February.
-                    Add an email signup form immediately — even 500 subscribers can generate $200–$500/month in newsletter sponsorships.
-                    Once you hit 10,000 monthly visitors, apply for premium ad networks like <strong className="text-white/85">Mediavine</strong> (pays 3–5x more than AdSense).
-                    After 12 months of documented revenue, list on <strong className="text-white/85">Flippa.com</strong> for a 24–36x monthly revenue multiple.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </RevealSection>
-        </div>
-      </section>
 
       {/* ── FOOTER ── */}
       <footer className="border-t border-white/8 py-12" style={{ background: 'oklch(0.10 0.012 45)' }}>
@@ -595,7 +447,6 @@ export default function Home() {
                   { label: 'Weekend 1 Performances', href: '#weekend1' },
                   { label: 'Weekend 2 Preview', href: '#weekend2' },
                   { label: 'Full Lineup', href: '#lineup' },
-                  { label: 'Monetization Guide', href: '#monetize' },
                 ].map(link => (
                   <button
                     key={link.href}
