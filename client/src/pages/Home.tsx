@@ -456,6 +456,9 @@ export default function Home() {
                     {link.label}
                   </button>
                 ))}
+                <button onClick={() => navigate('/live')} className="block text-white/50 hover:text-amber-400 text-sm transition-colors">Live Stream Hub</button>
+                <button onClick={() => navigate('/schedule')} className="block text-white/50 hover:text-amber-400 text-sm transition-colors">My W2 Schedule</button>
+                <button onClick={() => navigate('/about')} className="block text-white/50 hover:text-amber-400 text-sm transition-colors">About &amp; Contact</button>
               </div>
             </div>
             {/* Newsletter footer */}
@@ -473,7 +476,25 @@ export default function Home() {
               Official Site ↗
             </a>
           </div>
-          <p className="text-white/20 text-xs text-center mt-4">
+          {/* Legal links row */}
+          <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 mt-4 mb-3">
+            {[
+              { label: 'Privacy Policy', href: '/privacy' },
+              { label: 'Terms of Service', href: '/terms' },
+              { label: 'Cookie Policy', href: '/cookie-policy' },
+              { label: 'DMCA', href: '/dmca' },
+              { label: 'About & Contact', href: '/about' },
+            ].map(link => (
+              <button
+                key={link.href}
+                onClick={() => navigate(link.href)}
+                className="text-white/25 hover:text-white/60 text-xs transition-colors"
+              >
+                {link.label}
+              </button>
+            ))}
+          </div>
+          <p className="text-white/20 text-xs text-center">
             Fan-made guide. All performance videos are official Coachella YouTube content. Not affiliated with Goldenvoice or AEG Presents.
           </p>
         </div>
