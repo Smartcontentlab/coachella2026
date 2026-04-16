@@ -103,6 +103,32 @@ export default function NewsletterSignup({ variant = 'banner' }: NewsletterSignu
           </button>
         </form>
         {errorMsg && <p className="text-red-400 text-xs mt-1.5 pl-1">{errorMsg}</p>}
+        <div className="mt-4 pt-4 border-t border-white/5 flex flex-wrap gap-3">
+          <a
+            href="https://www.stubhub.com/coachella-music-festival-tickets/grouping/474852/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xs text-amber-400/60 hover:text-amber-400 transition-colors"
+          >
+            StubHub Tickets
+          </a>
+          <a
+            href="https://www.booking.com/searchresults.html?ss=Indio%2C+California%2C+United+States"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xs text-emerald-400/60 hover:text-emerald-400 transition-colors"
+          >
+            Booking.com
+          </a>
+          <a
+            href="https://music.amazon.com/playlists/B01M0S8L7S"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xs text-blue-400/60 hover:text-blue-400 transition-colors"
+          >
+            Amazon Music
+          </a>
+        </div>
       </div>
     );
   }

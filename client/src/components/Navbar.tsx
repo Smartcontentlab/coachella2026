@@ -99,6 +99,22 @@ export default function Navbar() {
             )}
           </button>
           <a
+            href="https://www.stubhub.com/coachella-music-festival-tickets/grouping/474852/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="ml-2 px-3 py-2 text-sm font-semibold text-amber-300 hover:text-amber-200 hover:bg-amber-500/10 rounded-lg transition-all duration-200 border border-amber-500/25"
+          >
+            Tickets
+          </a>
+          <a
+            href="https://www.booking.com/searchresults.html?ss=Indio%2C+California%2C+United+States"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="ml-1 px-3 py-2 text-sm font-semibold text-emerald-300 hover:text-emerald-200 hover:bg-emerald-500/10 rounded-lg transition-all duration-200 border border-emerald-500/25"
+          >
+            Hotels
+          </a>
+          <a
             href="https://www.coachella.com"
             target="_blank"
             rel="noopener noreferrer"
@@ -162,11 +178,29 @@ export default function Navbar() {
               <Calendar size={14} />
               My W2 Plan
             </button>
+            <div className="grid grid-cols-2 gap-2 mt-2">
+              <a
+                href="https://www.stubhub.com/coachella-music-festival-tickets/grouping/474852/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-3 text-sm font-semibold text-amber-300 bg-amber-500/10 border border-amber-500/25 rounded-lg text-center"
+              >
+                Tickets
+              </a>
+              <a
+                href="https://www.booking.com/searchresults.html?ss=Indio%2C+California%2C+United+States"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-3 text-sm font-semibold text-emerald-300 bg-emerald-500/10 border border-emerald-500/25 rounded-lg text-center"
+              >
+                Hotels
+              </a>
+            </div>
             <a
               href="https://www.coachella.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-2 px-4 py-3 text-sm font-semibold bg-amber-500 text-black rounded-lg text-center"
+              className="mt-1 px-4 py-3 text-sm font-semibold bg-amber-500 text-black rounded-lg text-center"
             >
               Official Site
             </a>

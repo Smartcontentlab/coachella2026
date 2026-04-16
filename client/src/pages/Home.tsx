@@ -169,6 +169,15 @@ export default function Home() {
                   </span>
                 )}
               </button>
+              <a
+                href="https://music.amazon.com/playlists/B01M0S8L7S"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-lg transition-all border border-blue-500/20 shadow-lg shadow-blue-600/20"
+              >
+                <Music size={16} />
+                Amazon Music
+              </a>
             </div>
           </div>
         </div>
