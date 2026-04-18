@@ -6,6 +6,7 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import { ScheduleProvider } from "./contexts/ScheduleContext";
 import CookieBanner from "./components/CookieBanner";
+import TipJarPopup from "./components/TipJarPopup";
 import Home from "./pages/Home";
 import Schedule from "./pages/Schedule";
 import ArtistPage from "./pages/ArtistPage";
@@ -43,6 +44,7 @@ function App() {
             <Toaster />
             <Router />
             <CookieBanner />
+            <TipJarPopup />
           </TooltipProvider>
         </ScheduleProvider>
       </ThemeProvider>

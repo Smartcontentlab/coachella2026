@@ -6,23 +6,19 @@ import { useState, useEffect } from 'react';
 import { Radio, Calendar, Clock, ChevronLeft, ExternalLink, MessageCircle, Users, Zap, AlertCircle, Play, RefreshCw, Coffee, Share2, Copy, Check } from 'lucide-react';
 import { useLocation } from 'wouter';
 
-// Official Coachella YouTube channel livestream IDs
-// These are the actual Coachella YouTube live stream IDs used during the festival
-// Update these with the actual live stream IDs when Coachella publishes them
+// Official Coachella YouTube channel livestream IDs for Weekend 2 (April 17-19, 2026)
+// These are the actual live stream IDs from the official Coachella YouTube channel
 const STREAMS = [
   {
     id: 'stream-main',
     label: 'Main Stage',
-    channelName: 'Coachella Stage',
+    channelName: 'Main Stage',
     color: 'text-amber-400',
     bg: 'bg-amber-500/15',
     border: 'border-amber-500/30',
-    // Official Coachella YouTube channel live stream — replace with actual stream ID when live
-    // Coachella typically streams at: youtube.com/@coachella
-    liveVideoId: 'live_stream?channel=UCzA78XJqFEAbk_gyFBgMBqA',
-    // Fallback: link to Coachella YouTube channel
+    // Main Stage - Live from Coachella 2026
+    liveVideoId: 'xIiSaqq10Yw',
     channelUrl: 'https://www.youtube.com/@coachella/streams',
-    // Weekend 1 replay for preview
     replayVideoId: 'i3TKJbr_dTw',
     description: 'Headliners: Sabrina Carpenter (Fri), Justin Bieber (Sat), Karol G (Sun)',
   },
@@ -33,7 +29,8 @@ const STREAMS = [
     color: 'text-emerald-400',
     bg: 'bg-emerald-500/15',
     border: 'border-emerald-500/30',
-    liveVideoId: 'live_stream?channel=UCzA78XJqFEAbk_gyFBgMBqA',
+    // Outdoor Theatre - Live from Coachella 2026
+    liveVideoId: 'CzAJcgiywFo',
     channelUrl: 'https://www.youtube.com/@coachella/streams',
     replayVideoId: 'NPijQ_jkyoA',
     description: 'Disclosure, Laufey, BigBang, Foster the People',
@@ -45,10 +42,63 @@ const STREAMS = [
     color: 'text-rose-400',
     bg: 'bg-rose-500/15',
     border: 'border-rose-500/30',
-    liveVideoId: 'live_stream?channel=UCzA78XJqFEAbk_gyFBgMBqA',
+    // Sahara - Live from Coachella 2026
+    liveVideoId: 'bkCTPTwU7ls',
     channelUrl: 'https://www.youtube.com/@coachella/streams',
     replayVideoId: 'C3cLOE6Phms',
     description: 'Nine Inch Noize, Major Lazer, Kaskade',
+  },
+  {
+    id: 'stream-mojave',
+    label: 'Mojave',
+    channelName: 'Mojave Tent',
+    color: 'text-violet-400',
+    bg: 'bg-violet-500/15',
+    border: 'border-violet-500/30',
+    // Mojave - Live from Coachella 2026
+    liveVideoId: 'cYT79Dp0Wuk',
+    channelUrl: 'https://www.youtube.com/@coachella/streams',
+    replayVideoId: 'C3cLOE6Phms',
+    description: 'Kacey Musgraves, FKA Twigs, Little Simz',
+  },
+  {
+    id: 'stream-gobi',
+    label: 'Gobi',
+    channelName: 'Gobi Tent',
+    color: 'text-orange-400',
+    bg: 'bg-orange-500/15',
+    border: 'border-orange-500/30',
+    // Gobi - Live from Coachella 2026
+    liveVideoId: 'OMImphySFJs',
+    channelUrl: 'https://www.youtube.com/@coachella/streams',
+    replayVideoId: 'C3cLOE6Phms',
+    description: 'Electronic & Dance Music',
+  },
+  {
+    id: 'stream-yuma',
+    label: 'Yuma',
+    channelName: 'Yuma Tent',
+    color: 'text-cyan-400',
+    bg: 'bg-cyan-500/15',
+    border: 'border-cyan-500/30',
+    // Yuma - Live from Coachella 2026
+    liveVideoId: 's5A5Y93nmPI',
+    channelUrl: 'https://www.youtube.com/@coachella/streams',
+    replayVideoId: 'C3cLOE6Phms',
+    description: 'Electronic & Underground Music',
+  },
+  {
+    id: 'stream-quasar',
+    label: 'Quasar',
+    channelName: 'Quasar Tent',
+    color: 'text-pink-400',
+    bg: 'bg-pink-500/15',
+    border: 'border-pink-500/30',
+    // Quasar - Live from Coachella 2026
+    liveVideoId: 'iulgXa5S62A',
+    channelUrl: 'https://www.youtube.com/@coachella/streams',
+    replayVideoId: 'C3cLOE6Phms',
+    description: 'Music & Entertainment',
   },
 ];
 
@@ -303,7 +353,7 @@ export default function LiveStream() {
                 <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
                   <iframe
                     className="absolute inset-0 w-full h-full"
-                    src={`https://www.youtube.com/embed/${activeStream.liveVideoId}&autoplay=1`}
+                    src={`https://www.youtube.com/embed/${activeStream.liveVideoId}?autoplay=1`}
                     title={`${activeStream.label} Live Stream`}
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
