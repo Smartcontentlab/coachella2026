@@ -125,7 +125,8 @@ export default function LiveStream() {
     setTimeout(() => setCopied(false), 2000);
   };
 
-  const CASH_APP_URL = "https://cash.app/$Smartcontentlab";
+  const CASH_APP_URL = "https://cash.app/$ChristopherGall6";
+  const CASH_APP_QR = "/cashapp_qr.png";
 
   // Auto-scroll chat
   useEffect(() => {
@@ -221,14 +222,19 @@ export default function LiveStream() {
                 <p className="text-white/50 text-xs">Direct tip via Cash App!</p>
               </div>
             </div>
-            <a 
-              href={CASH_APP_URL} 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="px-4 py-2 bg-amber-500 hover:bg-amber-400 text-black font-bold text-xs rounded-lg transition-all"
-            >
-              Tip on Cash App
-            </a>
+            <div className="flex items-center gap-3">
+              <div className="hidden sm:block w-12 h-12 rounded-lg overflow-hidden border border-white/10">
+                <img src={CASH_APP_QR} alt="Cash App QR" className="w-full h-full object-cover" />
+              </div>
+              <a 
+                href={CASH_APP_URL} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="px-4 py-2 bg-amber-500 hover:bg-amber-400 text-black font-bold text-xs rounded-lg transition-all"
+              >
+                Tip on Cash App
+              </a>
+            </div>
           </div>
 
           <div className="rounded-2xl border border-blue-500/20 bg-blue-500/8 p-4 flex items-center justify-between gap-4">
@@ -291,7 +297,7 @@ export default function LiveStream() {
             </div>
 
             {/* Video player */}
-            <div className="rounded-2xl overflow-hidden border border-white/8">
+            <div className="rounded-2xl overflow-hidden border border-white/8 relative group">
               {isLive ? (
                 // Live stream embed
                 <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
@@ -302,6 +308,27 @@ export default function LiveStream() {
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
                   />
+                  
+                  {/* Live Schedule Overlay */}
+                  <div className="absolute top-4 left-4 z-10 w-48 bg-black/60 backdrop-blur-md border border-white/10 rounded-xl overflow-hidden hidden md:block opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="bg-red-500/20 px-3 py-1.5 border-b border-white/10">
+                      <p className="text-[10px] font-black text-red-400 uppercase tracking-widest flex items-center gap-1.5">
+                        <div className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse" />
+                        Live Schedule
+                      </p>
+                    </div>
+                    <div className="p-2 space-y-2">
+                      {W2_SCHEDULE[activeDay].sets.slice(0, 3).map((set, i) => (
+                        <div key={i} className="flex flex-col">
+                          <span className="text-[9px] text-white/40 font-bold uppercase">{set.time}</span>
+                          <span className="text-xs text-white font-bold truncate">{set.artist}</span>
+                        </div>
+                      ))}
+                      <div className="pt-1 border-t border-white/5">
+                        <p className="text-[9px] text-amber-400/60 font-medium">Full schedule below ↓</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               ) : (
                 // Pre-festival: show replay + link to live

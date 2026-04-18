@@ -72,7 +72,8 @@ export default function ArtistPage() {
   };
 
   const hasTabs = w1Videos.length > 0 && w2Videos.length > 0;
-  const CASH_APP_URL = "https://cash.app/$Smartcontentlab";
+  const CASH_APP_URL = "https://cash.app/$ChristopherGall6";
+  const CASH_APP_QR = "/cashapp_qr.png";
 
   return (
     <div className="min-h-screen pb-20" style={{ background: 'oklch(0.12 0.015 45)' }}>
@@ -172,14 +173,19 @@ export default function ArtistPage() {
               <p className="text-white/50 text-xs">Direct tip via Cash App!</p>
             </div>
           </div>
-          <a 
-            href={CASH_APP_URL} 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="px-4 py-2 bg-amber-500 hover:bg-amber-400 text-black font-bold text-xs rounded-lg transition-all"
-          >
-            Tip on Cash App
-          </a>
+          <div className="flex items-center gap-3">
+            <div className="hidden sm:block w-12 h-12 rounded-lg overflow-hidden border border-white/10">
+              <img src={CASH_APP_QR} alt="Cash App QR" className="w-full h-full object-cover" />
+            </div>
+            <a 
+              href={CASH_APP_URL} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="px-4 py-2 bg-amber-500 hover:bg-amber-400 text-black font-bold text-xs rounded-lg transition-all"
+            >
+              Tip on Cash App
+            </a>
+          </div>
         </div>
 
         {/* ── SOCIAL MEDIA LINKS ── */}
