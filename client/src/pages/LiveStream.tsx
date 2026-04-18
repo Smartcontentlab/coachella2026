@@ -3,7 +3,7 @@
 // Features: Embedded YouTube streams, live chat, schedule, watch party mode
 
 import { useState, useEffect } from 'react';
-import { Radio, Calendar, Clock, ChevronLeft, ExternalLink, MessageCircle, Users, Zap, AlertCircle, Play, RefreshCw } from 'lucide-react';
+import { Radio, Calendar, Clock, ChevronLeft, ExternalLink, MessageCircle, Users, Zap, AlertCircle, Play, RefreshCw, Coffee, Share2, Copy, Check } from 'lucide-react';
 import { useLocation } from 'wouter';
 
 // Official Coachella YouTube channel livestream IDs
@@ -116,6 +116,14 @@ export default function LiveStream() {
   const [userColor] = useState(USER_COLORS[Math.floor(Math.random() * USER_COLORS.length)]);
   const [isLive] = useState(false); // Set to true when Coachella is actually streaming
   const [activeDay, setActiveDay] = useState(0);
+  const [copied, setCopied] = useState(false);
+
+  const handleCopyLink = () => {
+    const shareText = `Watching Coachella 2026! 🌵 Check out the full schedule, live streams, and set times here: ${window.location.origin}/live`;
+    navigator.clipboard.writeText(shareText);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
 
   // Auto-scroll chat
   useEffect(() => {
@@ -199,19 +207,60 @@ export default function LiveStream() {
       </div>
 
       <div className="container pt-5">
+        {/* Monetization & Sharing Bar */}
+        <div className="mb-5 grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="rounded-2xl border border-amber-500/20 bg-amber-500/8 p-4 flex items-center justify-between gap-4">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-amber-500/20 flex items-center justify-center">
+                <Coffee size={20} className="text-amber-400" />
+              </div>
+              <div>
+                <p className="text-white font-bold text-sm">Support the Hub</p>
+                <p className="text-white/50 text-xs">Help keep the streams & schedule live!</p>
+              </div>
+            </div>
+            <a 
+              href="https://www.buymeacoffee.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="px-4 py-2 bg-amber-500 hover:bg-amber-400 text-black font-bold text-xs rounded-lg transition-all"
+            >
+              Tip $5
+            </a>
+          </div>
+
+          <div className="rounded-2xl border border-blue-500/20 bg-blue-500/8 p-4 flex items-center justify-between gap-4">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-blue-500/20 flex items-center justify-center">
+                <Share2 size={20} className="text-blue-400" />
+              </div>
+              <div>
+                <p className="text-white font-bold text-sm">Share with Fans</p>
+                <p className="text-white/50 text-xs">Post this in YouTube chat to help others!</p>
+              </div>
+            </div>
+            <button 
+              onClick={handleCopyLink}
+              className={`flex items-center gap-2 px-4 py-2 ${copied ? 'bg-green-500' : 'bg-blue-600 hover:bg-blue-500'} text-white font-bold text-xs rounded-lg transition-all`}
+            >
+              {copied ? <Check size={14} /> : <Copy size={14} />}
+              {copied ? 'Copied!' : 'Copy Link'}
+            </button>
+          </div>
+        </div>
+
         {/* Status Banner */}
         {!isLive && (
-          <div className="mb-5 rounded-2xl border border-amber-500/20 bg-amber-500/8 p-4">
+          <div className="mb-5 rounded-2xl border border-white/8 bg-white/5 p-4">
             <div className="flex items-start gap-3">
-              <AlertCircle size={16} className="text-amber-400 flex-shrink-0 mt-0.5" />
+              <AlertCircle size={16} className="text-white/40 flex-shrink-0 mt-0.5" />
               <div>
-                <p className="text-amber-300 font-bold text-sm mb-1">Weekend 2 Livestreams: April 17–19, 2026</p>
-                <p className="text-white/55 text-sm leading-relaxed">
-                  Coachella's official YouTube livestreams go live on the night of each performance. This page will automatically show the live streams when they begin. Until then, watch Weekend 1 replays below or{' '}
-                  <a href="https://www.youtube.com/@coachella" target="_blank" rel="noopener noreferrer" className="text-amber-400 hover:text-amber-300 underline">
-                    subscribe to the official Coachella YouTube channel
-                  </a>{' '}
-                  to get notified the moment they go live.
+                <p className="text-white/80 font-bold text-sm mb-1">Weekend 2 Livestreams: April 17–19, 2026</p>
+                <p className="text-white/40 text-sm leading-relaxed">
+                  Official streams go live nightly. Until then, watch Weekend 1 replays below or{' '}
+                  <a href="https://www.youtube.com/@coachella" target="_blank" rel="noopener noreferrer" className="text-amber-400/60 hover:text-amber-400 underline">
+                    subscribe to Coachella on YouTube
+                  </a>.
                 </p>
               </div>
             </div>
