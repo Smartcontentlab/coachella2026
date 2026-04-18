@@ -3,7 +3,7 @@
 // Features: Social links, videos, schedule, YouTube comments
 
 import { useState, useMemo } from 'react';
-import { ChevronLeft, Play, Clock, Star, Calendar, Plus, CheckCircle2, AlertTriangle, MessageCircle, Heart, Share2, ExternalLink } from 'lucide-react';
+import { ChevronLeft, Play, Clock, Star, Calendar, Plus, CheckCircle2, AlertTriangle, MessageCircle, Heart, Share2, ExternalLink, Coffee } from 'lucide-react';
 import { useLocation, useParams } from 'wouter';
 import { allArtists } from '@/lib/data';
 import { w2Schedule, stageColorMap, stageShortNames, formatTime, getConflicts } from '@/lib/scheduleData';
@@ -72,6 +72,7 @@ export default function ArtistPage() {
   };
 
   const hasTabs = w1Videos.length > 0 && w2Videos.length > 0;
+  const CASH_APP_URL = "https://cash.app/$Smartcontentlab";
 
   return (
     <div className="min-h-screen pb-20" style={{ background: 'oklch(0.12 0.015 45)' }}>
@@ -159,6 +160,27 @@ export default function ArtistPage() {
       </div>
 
       <div className="px-4 pt-5 space-y-5 max-w-2xl mx-auto">
+
+        {/* ── TIP JAR ── */}
+        <div className="rounded-2xl border border-amber-500/20 bg-amber-500/8 p-4 flex items-center justify-between gap-4">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-xl bg-amber-500/20 flex items-center justify-center">
+              <Coffee size={20} className="text-amber-400" />
+            </div>
+            <div>
+              <p className="text-white font-bold text-sm">Support the Hub</p>
+              <p className="text-white/50 text-xs">Direct tip via Cash App!</p>
+            </div>
+          </div>
+          <a 
+            href={CASH_APP_URL} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="px-4 py-2 bg-amber-500 hover:bg-amber-400 text-black font-bold text-xs rounded-lg transition-all"
+          >
+            Tip on Cash App
+          </a>
+        </div>
 
         {/* ── SOCIAL MEDIA LINKS ── */}
         {Object.keys(socials).length > 0 && (

@@ -125,6 +125,8 @@ export default function LiveStream() {
     setTimeout(() => setCopied(false), 2000);
   };
 
+  const CASH_APP_URL = "https://cash.app/$Smartcontentlab";
+
   // Auto-scroll chat
   useEffect(() => {
     const chatEl = document.getElementById('chat-messages');
@@ -216,16 +218,16 @@ export default function LiveStream() {
               </div>
               <div>
                 <p className="text-white font-bold text-sm">Support the Hub</p>
-                <p className="text-white/50 text-xs">Help keep the streams & schedule live!</p>
+                <p className="text-white/50 text-xs">Direct tip via Cash App!</p>
               </div>
             </div>
             <a 
-              href="https://www.buymeacoffee.com" 
+              href={CASH_APP_URL} 
               target="_blank" 
               rel="noopener noreferrer"
               className="px-4 py-2 bg-amber-500 hover:bg-amber-400 text-black font-bold text-xs rounded-lg transition-all"
             >
-              Tip $5
+              Tip on Cash App
             </a>
           </div>
 
